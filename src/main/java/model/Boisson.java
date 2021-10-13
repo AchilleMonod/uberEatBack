@@ -1,5 +1,5 @@
 package model;
 
-public class Boisson {
+public class Boisson extends Article {
 
 }
