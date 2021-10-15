@@ -18,9 +18,11 @@ public class Commande {
 	private LocalDate heure;
 	
 	@ManyToOne
+	@JoinColumn(name="id_restau")
 	private Restaurant restaurant;
 	
 	@ManyToOne
+	@JoinColumn(name="id_client")
 	private Client client;
 
 	public Commande() {}
