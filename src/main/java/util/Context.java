@@ -27,7 +27,7 @@ import dao.jpa.DAOUtilisateur;
 public class Context {
 	
 	
-	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("configJPA");
+	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("ubereat");
 	private IDAOAdmin daoAdmin=new DAOAdmin();
 	private IDAOArticle daoArticle=new DAOArticle();
 	private IDAOBoisson daoBoisson=new DAOBoisson();
