@@ -156,7 +156,12 @@ public class Test {
 	public static void main(String[] args) {
 
 		Context.getInstance().getEmf();
-		Context.getInstance().closeEmf();
 		
+		
+		Client c=new Client("NASSIF","michel","michelnassif@gmail.com","michel");
+	
+		Context.getInstance().getDaoClient().save(c);
+		
+		Context.getInstance().closeEmf();
 	}
 }
