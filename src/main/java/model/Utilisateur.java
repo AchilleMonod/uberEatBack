@@ -1,18 +1,37 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.*;
+
+@Entity
+@Inheritance
+@Table(name="Utilisateur")
 public abstract class Utilisateur {
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "id_utilisateur")
+protected int id ;
 
 protected String nom ;	
 protected String prenom;
-protected int id ;
+
+@Column(unique = true)
+protected String email;
+
 protected String mdp;
 
 
-public Utilisateur(String nom, String prenom, int id, String mdp) {
+
+public Utilisateur() {
 	super();
+}
+
+
+public Utilisateur(String nom, String prenom,String email, String mdp) {
 	this.nom = nom;
 	this.prenom = prenom;
-	this.id = id;
+	this.email=email;
 	this.mdp = mdp;
 }
 

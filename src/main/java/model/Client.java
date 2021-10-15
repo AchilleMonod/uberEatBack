@@ -1,9 +1,16 @@
 package model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Client extends Utilisateur {
 
-	public Client(String nom, String prenom, int id, String mdp) {
-		super(nom, prenom, id, mdp);
+	public Client() {
+		super();
+	}
+	
+	public Client(String nom, String prenom, String email, String mdp) {
+		super(nom, prenom, email, mdp);
 	}
 
 	@Override
