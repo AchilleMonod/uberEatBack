@@ -1,9 +1,19 @@
 package model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Restaurateur extends Utilisateur  {
 
-	public Restaurateur(String nom, String prenom, int id, String mdp) {
-		super(nom, prenom, id, mdp);
+	
+	
+	public Restaurateur() {
+		super();
+	}
+
+
+	public Restaurateur(String nom, String prenom, String email, String mdp) {
+		super(nom, prenom, email, mdp);
 	}
 
 
