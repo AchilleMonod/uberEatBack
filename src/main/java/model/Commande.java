@@ -17,9 +17,11 @@ public class Commande {
 	
 	private LocalDate heure;
 	
-	private int idRestaurant;
+	@ManyToOne
+	private Restaurant restaurant;
 	
-	private int idClient;
+	@ManyToOne
+	private Client client;
 
 	public Commande() {}
 	
@@ -56,24 +58,23 @@ public class Commande {
 		this.heure = heure;
 	}
 
-
-	public int getIdRestaurant() {
-		return idRestaurant;
+	public Restaurant getRestaurant() {
+		return restaurant;
 	}
 
 
-	public void setIdRestaurant(int idRestaurant) {
-		this.idRestaurant = idRestaurant;
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
 	}
 
 
-	public int getIdClient() {
-		return idClient;
+	public Client getClient() {
+		return client;
 	}
 
 
-	public void setIdClient(int idClient) {
-		this.idClient = idClient;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 

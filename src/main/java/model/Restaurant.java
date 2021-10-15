@@ -12,7 +12,9 @@ public class Restaurant {
 	@Column(name = "id_restaurant")
 	private int id;
 	
-
+	@OneToMany(mappedBy="restaurant")
+	private List<Commande> commandes;
+	
 	private transient List<Article> carte;
 	
 	@Enumerated(EnumType.STRING)
@@ -51,6 +53,16 @@ public class Restaurant {
 
 	public void setTyperesto(TypeResto typeresto) {
 		this.typeresto = typeresto;
+	}
+	
+	
+
+	public List<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
 	}
 
 	@Override
