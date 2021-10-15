@@ -1,6 +1,6 @@
 package model;
 
-public class Utilisateur {
+abstract class Utilisateur {
 
 protected String nom ;	
 protected String prenom;
