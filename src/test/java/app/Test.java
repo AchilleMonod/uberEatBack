@@ -84,62 +84,78 @@ public class Test {
 		}
 	}
 
+	
+	public static void menuAdmin() 
+    {
+        System.out.println("Menu Admin");
+        System.out.println("1- Valider un restaurant");
+        System.out.println("2- Creer un admin");
+        System.out.println("3- Supprimer un restaurant");
+        System.out.println("4- Supprimer un compte");
+        System.out.println("5- Deconnexion");
+
+
+        int choix = saisieInt("Choisir un menu :");
+        switch(choix) 
+        {
+        case 1 : showListResto();break;
+        case 2 : createAdmin();break;
+        case 3 : deleteResto();break;
+        case 4 : deleteAdmin();break;
+        case 5 : menuPrincipal();break;
+        }
+        menuAdmin();
+    }
+	
+	
 	public static void menuClient() 
 	{
 		System.out.println("Menu Client");
-		System.out.println("1- ");
-		System.out.println("2- Deconnexion");
+		System.out.println("1- Commander");
+		System.out.println("2- Historique Commande");
+		System.out.println("3- Modifier infos perso");
+		System.out.println("4- Deconnexion");
 
 
 		int choix = saisieInt("Choisir un menu :");
 		switch(choix) 
 		{
-		case 1 : ;break;
-		case 2 : menuConnexion();break;
+		case 1 : menuResto();break;
+		case 2 : consulterHistorique();break;
+		case 3 : modifInfosClient();break;
+		case 4 : menuPrincipal();break;
 
 		}
 		menuClient();
 	}
 
+	
 	public static void menuRestaurateur() 
     {
         System.out.println("Menu Restaurateur");
-        System.out.println("1- ");
-        System.out.println("2- Deconnexion");
+        System.out.println("1- Ajouter un Resto");
+        System.out.println("2- Modifier carte/infos resto");
+        System.out.println("3- Modifier infos perso");
+        System.out.println("4- Deconnexion");
 
 
         int choix = saisieInt("Choisir un menu :");
         switch(choix) 
         {
-        case 1 : ;break;
-        case 2 : menuConnexion();break;
+        case 1 : addResto();break;
+        case 2 : modifInfosResto();break;
+        case 3 : modifInfosRestaurateur();break;
+        case 4 : menuConnexion();break;
 
         }
         menuRestaurateur();
     }
 
-	public static void menuAdmin() 
-    {
-        System.out.println("Menu Admin");
-        System.out.println("1- ");
-        System.out.println("2- Deconnexion");
-
-
-        int choix = saisieInt("Choisir un menu :");
-        switch(choix) 
-        {
-        case 1 : ;break;
-        case 2 : menuConnexion();break;
-
-        }
-        menuAdmin();
-    }
-	
 
 
 	public static void main(String[] args) {
 
-		menuConnexion();
+		menuPrincipal();
 		
 	}
 }
