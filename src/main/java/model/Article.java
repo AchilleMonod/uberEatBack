@@ -24,7 +24,6 @@ public class Article {
 	protected String descritption;
 	
 	@ManyToOne
-	@JoinColumn(name="id_restaurant")
 	protected Restaurant restaurant;
 	
 	public Article() {

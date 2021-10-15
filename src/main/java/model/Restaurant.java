@@ -12,8 +12,8 @@ public class Restaurant {
 	@Column(name = "id_restaurant")
 	private int id;
 	
-	@OneToMany
-	private List<Article> carte;
+
+	private transient List<Article> carte;
 	
 	@Enumerated(EnumType.STRING)
 	private TypeResto typeresto;

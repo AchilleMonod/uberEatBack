@@ -1,28 +1,25 @@
 package model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Boisson extends Article {
 
+	public Boisson() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Boisson(double prix, String libelle, Restaurant restaurant) {
+		super(prix, libelle, restaurant);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Boisson(double prix, String libelle, String descritption, Restaurant restaurant) {
+		super(prix, libelle, descritption, restaurant);
+		// TODO Auto-generated constructor stub
+	}
+
 	
-	private double quantite;
 
-	public Boisson(double prix, String libelle, String descritption, double quantite) {
-		super(prix, libelle, descritption);
-		this.quantite = quantite;
-	}
-
-	public double getQuantite() {
-		return quantite;
-	}
-
-	public void setQuantite(double quantite) {
-		this.quantite = quantite;
-	}
-
-	@Override
-	public String toString() {
-		return "Boisson [quantite=" + quantite + ", prix=" + prix + ", libelle=" + libelle + ", descritption="
-				+ descritption + "]";
-	}
-	
-	
 }
