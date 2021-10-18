@@ -40,6 +40,7 @@ public class Context {
 	private IDAOUtilisateur daoUtilisateur=new DAOUtilisateur();
 	private Utilisateur connected;
 	
+	
 	//SINGLETON
 		private static Context _instance;
 		

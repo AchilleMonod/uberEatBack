@@ -20,7 +20,7 @@ public class DAOUtilisateur implements IDAOUtilisateur{
 		em.close();
 		return objet;
 	}
-
+	
 	@Override
 	public List<Utilisateur> findAll() {
 		EntityManager em = Context.getInstance().getEmf().createEntityManager();
@@ -50,33 +50,9 @@ public class DAOUtilisateur implements IDAOUtilisateur{
 		em.getTransaction().commit();
 		em.close();
 	}
-
+	
 	@Override
-	public Utilisateur connect(String email, String mdp) {
+	public Utilisateur connect(String login, String password) {
 		EntityManager em = Context.getInstance().getEmf().createEntityManager();
 
-		Query requeteConnect = em.createQuery("Select u from Utilisateur u where u.email=:email and u.mdp=:mdp",Utilisateur.class);
-		requeteConnect.setParameter("email", email);
-		requeteConnect.setParameter("password", mdp);
-		Utilisateur connected=null;
-
-		try {
-			connected =  (Utilisateur) requeteConnect.getSingleResult();
-		}
-		catch(Exception e) {}
-
-		return connected;
-	}
-	
-	public void createAccount(int choix,Utilisateur newUser) {
-		if(choix==1) 
-		{
-			Context.getInstance().getDaoClient().save((Client) newUser);
-		}
-		else if(choix==2) 
-		{
-			Context.getInstance().getDAORestaurateur().save((Restaurateur) newUser);
-		}
-	}
-	
 }
