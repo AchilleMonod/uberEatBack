@@ -20,6 +20,7 @@ import util.Context;
 
 public class Test {
 
+	static LinkedList<Restaurant> nouveauRestaurant =new LinkedList<Restaurant>();
 
 	public static String saisieString(String msg) 
 	{
