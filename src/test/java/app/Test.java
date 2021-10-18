@@ -60,7 +60,7 @@ public class Test {
 
 		String password = saisieString("Entrer le password");
 
-		Utilisateur user = Context.getInstance().getDaoPersonne().connect(login, password);
+		Utilisateur user = Context.getInstance().getDaoUtilisateur().connect(login, password);
 
 		if(user instanceof Client) 
 		{
