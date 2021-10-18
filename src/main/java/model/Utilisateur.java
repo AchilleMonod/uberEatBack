@@ -77,6 +77,15 @@ public void setMdp(String mdp) {
 }
 
 
+public String getEmail() {
+	return email;
+}
+
+public void setEmail(String email) {
+	this.email = email;
+}
+
+
 @Override
 public String toString() {
 	return "Utilisateur [nom=" + nom + ", prenom=" + prenom + ", id=" + id + ", mdp=" + mdp + "]";
