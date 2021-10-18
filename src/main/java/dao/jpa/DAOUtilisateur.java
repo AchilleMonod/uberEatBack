@@ -68,7 +68,7 @@ public class DAOUtilisateur implements IDAOUtilisateur{
 		return connected;
 	}
 	
-	public void creerUncompte(int choix,Utilisateur newUser) {
+	public void createAccount(int choix,Utilisateur newUser) {
 		if(choix==1) 
 		{
 			Context.getInstance().getDaoClient().save((Client) newUser);
@@ -78,4 +78,5 @@ public class DAOUtilisateur implements IDAOUtilisateur{
 			Context.getInstance().getDAORestaurateur().save((Restaurateur) newUser);
 		}
 	}
+	
 }
