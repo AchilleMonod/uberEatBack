@@ -149,7 +149,7 @@ public class Test {
 	{
 		System.out.println("Menu Restaurateur");
 		System.out.println("1- Ajouter un Resto");
-		System.out.println("2- Modifier carte/infos resto");
+		System.out.println("2- Modifier carte");
 		System.out.println("3- Modifier infos perso");
 		System.out.println("4- Deconnexion");
 
@@ -158,7 +158,7 @@ public class Test {
 		switch(choix) 
 		{
 		case 1 : Context.getInstance().getDaoRestaurateur().addResto(nouveauRestaurant);break;
-		case 2 : modifInfosResto();break;
+		case 2 : Context.getInstance().getDaoRestaurateur().modifCarte(((Restaurateur) connected).getRestaurant());;
 		case 3 : Context.getInstance().getDaoUtilisateur().modifInfo(connected);break;
 		case 4 : menuConnexion();break;
 
