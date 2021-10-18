@@ -1,6 +1,7 @@
 package dao.jpa;
 
 import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -12,6 +13,13 @@ import model.Utilisateur;
 import util.Context;
 
 public class DAOUtilisateur implements IDAOUtilisateur{
+
+	public static String saisieString(String msg) 
+	{
+		Scanner sc= new Scanner(System.in);		
+		System.out.println(msg);
+		return sc.nextLine();
+	}
 
 	@Override
 	public Utilisateur findById(Integer id) {
@@ -67,15 +75,22 @@ public class DAOUtilisateur implements IDAOUtilisateur{
 
 		return connected;
 	}
-	
-	public void creerUncompte(int choix,Utilisateur newUser) {
+
+	public void creerUncompte(int choix) {
+		String nom = saisieString("Entrez votre nom");
+		String prenom = saisieString("Entrez votre prenom");
+		String email = saisieString("Entrez votre email");
+		String mdp = saisieString("Entrez votre mdp");
 		if(choix==1) 
 		{
-			Context.getInstance().getDaoClient().save((Client) newUser);
+			Client newUser = new Client(nom,prenom,email,mdp); 
+			Context.getInstance().getDaoClient().save(newUser);
 		}
 		else if(choix==2) 
 		{
-			Context.getInstance().getDAORestaurateur().save((Restaurateur) newUser);
+			Restaurateur newUser = new Restaurateur(nom,prenom,email,mdp); 
+			Context.getInstance().getDaoRestaurateur().save(newUser);
 		}
 	}
+
 }

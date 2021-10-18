@@ -40,6 +40,7 @@ public class Context {
 	private IDAOUtilisateur daoUtilisateur=new DAOUtilisateur();
 	private Utilisateur connected;
 	
+	
 	//SINGLETON
 		private static Context _instance;
 		
@@ -92,10 +93,10 @@ public class Context {
 			return daoRestaurant;
 		}
 		
-		public IDAORestaurateur getDAORestaurateur(){
+		public IDAORestaurateur getDaoRestaurateur(){
 			return daoRestaurateur;
 		}
-		public IDAOUtilisateur getDAOutilisateur(){
+		public IDAOUtilisateur getDaoUtilisateur(){
 			return daoUtilisateur;
 		}
 		

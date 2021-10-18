@@ -7,6 +7,7 @@ import javax.persistence.Query;
 
 import dao.IDAORestaurant;
 import model.Restaurant;
+import model.TypeResto;
 import util.Context;
 
 public class DAORestaurant implements IDAORestaurant{
@@ -26,6 +27,17 @@ public class DAORestaurant implements IDAORestaurant{
 		List<Restaurant> restaurant = requete.getResultList();
 		em.close();
 		return restaurant;
+	}
+	@Override
+	public List<Restaurant> findByType(TypeResto typeresto){
+		
+		EntityManager em = Context.getInstance().getEmf().createEntityManager();
+		Query requete = em.createQuery("from Restaurant r where r.TypeResto:=typeresto",Restaurant.class);
+		requete.setParameter("TypeResto", typeresto);
+		List<Restaurant> restaurant = requete.getResultList();
+		em.close();
+		return restaurant;
+		
 	}
 
 

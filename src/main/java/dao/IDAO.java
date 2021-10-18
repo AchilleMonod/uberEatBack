@@ -8,7 +8,7 @@ public interface IDAO<T,K> {
 	public List<T> findAll();
 	public T save(T o);
 	public void delete(T o);
-	
+
 	
 	
 }

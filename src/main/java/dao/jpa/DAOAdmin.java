@@ -1,12 +1,18 @@
 package dao.jpa;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import dao.IDAOAdmin;
 import model.Admin;
+import model.Restaurant;
+import model.Restaurateur;
+import model.Utilisateur;
 import util.Context;
 
 public class DAOAdmin implements IDAOAdmin{
@@ -47,6 +53,65 @@ public class DAOAdmin implements IDAOAdmin{
 		em.remove(a);
 		em.getTransaction().commit();
 		em.close();
+	}
+	
+	public static String saisieString(String msg) 
+	{
+		Scanner sc= new Scanner(System.in);		
+		System.out.println(msg);
+		return sc.nextLine();
+	}
+	
+	public void validerUnRestau (LinkedList<Restaurant> nouveauRestaurant)
+	{
+		Restaurant r= new Restaurant();
+		String choix;
+		while (nouveauRestaurant.size()>0)
+		{
+			r=nouveauRestaurant.poll();
+			System.out.println(r);
+			choix=saisieString("Voulez vous ajouter ce restaurant à l'appli ? (oui/non)");
+			if (choix.equalsIgnoreCase("oui"))
+			{
+				r=Context.getInstance().getDaoRestaurant().save(r);
+			}
+		}
+		System.out.println("Il n'y a pas d'autres restaurants à ajouter");
+	}
+	
+	public void supprimerRestau()
+	{
+		List<Restaurant> restaurant= new ArrayList();
+		restaurant= Context.getInstance().getDaoRestaurant().findAll();
+		String choix=saisieString("nom du restaurant à supprimer:");
+		for (Restaurant r :restaurant)
+		{
+			if (r.getName().equalsIgnoreCase(choix)) 
+			{
+				if (saisieString("Voulez vous vraiment supprimer "+r +" (oui/non)").equalsIgnoreCase("oui"))
+				{
+					Context.getInstance().getDaoRestaurant().delete(r);
+				}
+				
+			}
+		}
+	}
+	
+	public void supprimerCompte()
+	{
+		List<Utilisateur> user= new ArrayList();
+		user= Context.getInstance().getDaoUtilisateur().findAll();
+		String choix=saisieString("nom du compte à supprimer:");
+		for (Utilisateur u :user)
+		{
+			if (u.getNom().equalsIgnoreCase(choix)) 
+			{
+				if (saisieString("Voulez vous vraiment supprimer "+u +" (oui/non)").equalsIgnoreCase("oui"))
+				{
+					Context.getInstance().getDaoUtilisateur().delete( u);
+				}
+			}
+		}
 	}
 
 }
