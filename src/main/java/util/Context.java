@@ -93,10 +93,10 @@ public class Context {
 			return daoRestaurant;
 		}
 		
-		public IDAORestaurateur getDAORestaurateur(){
+		public IDAORestaurateur getDaoRestaurateur(){
 			return daoRestaurateur;
 		}
-		public IDAOUtilisateur getDAOutilisateur(){
+		public IDAOUtilisateur getDaoUtilisateur(){
 			return daoUtilisateur;
 		}
 		
