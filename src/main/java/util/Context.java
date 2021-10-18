@@ -21,6 +21,7 @@ import dao.jpa.DAOPlat;
 import dao.jpa.DAORestaurant;
 import dao.jpa.DAORestaurateur;
 import dao.jpa.DAOUtilisateur;
+import model.Utilisateur;
 
 
 
@@ -37,6 +38,7 @@ public class Context {
 	private IDAORestaurant daoRestaurant=new DAORestaurant();
 	private IDAORestaurateur daoRestaurateur=new DAORestaurateur();
 	private IDAOUtilisateur daoUtilisateur=new DAOUtilisateur();
+	private Utilisateur connected;
 	
 	//SINGLETON
 		private static Context _instance;
@@ -61,6 +63,8 @@ public class Context {
 			return emf;
 		}
 
+		
+		
 		public IDAOAdmin getDaoAdmin() {
 			return daoAdmin;
 		}
@@ -94,6 +98,11 @@ public class Context {
 		public IDAOUtilisateur getDAOutilisateur(){
 			return daoUtilisateur;
 		}
+		
+		public void setConnected(Utilisateur connected) {
+			this.connected = connected;
+		}
+		
 		public void closeEmf() 
 		{
 			this.emf.close();
