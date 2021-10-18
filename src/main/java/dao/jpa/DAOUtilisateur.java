@@ -92,5 +92,18 @@ public class DAOUtilisateur implements IDAOUtilisateur{
 			Context.getInstance().getDaoRestaurateur().save(newUser);
 		}
 	}
+	
+	public void modifInfo(Utilisateur user)
+	{
+		String choix=saisieString("Que voulez vous modifier ? (email/mdp)");
+		if (choix.equalsIgnoreCase("email"))
+		{
+			user.setEmail(saisieString("Nouveau email:"));
+		}
+		else if(choix.equalsIgnoreCase("mdp"))
+		{
+			user.setMdp(saisieString("Nouveau mdp:"));
+		}
+	}
 
 }
