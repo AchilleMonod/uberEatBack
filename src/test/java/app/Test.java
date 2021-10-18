@@ -20,8 +20,10 @@ import util.Context;
 
 public class Test {
 
+	static Utilisateur connected;
 	static LinkedList<Restaurant> nouveauRestaurant =new LinkedList<Restaurant>();
 
+	
 	public static String saisieString(String msg) 
 	{
 		Scanner sc= new Scanner(System.in);		
@@ -60,7 +62,7 @@ public class Test {
 
 		String password = saisieString("Entrer le password");
 
-		Utilisateur user = Context.getInstance().getDaoUtilisateur().connect(login, password);
+		connected = Context.getInstance().getDaoUtilisateur().connect(login, password);
 
 		if(user instanceof Client) 
 		{
