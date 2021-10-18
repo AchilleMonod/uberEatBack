@@ -11,6 +11,6 @@ public interface IDAORestaurant extends IDAO<Restaurant,Integer> {
 
 	List<Restaurant> findByType(TypeResto typeresto);
 	 
-	
+	List<Restaurant> findByName(String name);
 
 }

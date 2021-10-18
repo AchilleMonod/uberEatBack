@@ -7,11 +7,16 @@ import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import org.hibernate.internal.build.AllowSysOut;
+
 import java.util.LinkedList;
 
 import model.Admin;
+import model.Article;
 import model.Boisson;
 import model.Client;
+import model.Commande;
+import model.Plat;
 import model.Restaurant;
 import model.Restaurateur;
 import model.TypeResto;
@@ -179,7 +184,7 @@ public class Test {
 		switch(choix) 
 		{
 		case 1 : findByType();break;
-		// case 2 : findByName();break;
+	    case 2 : findByName();break;
 		// case 3 : findByLocation();break;
 		case 4 : menuConnexion();break;
 		}
@@ -205,11 +210,54 @@ public class Test {
 			findByType();
 		else if (choix == ((type.length)+1))
 			menuResto();
-		else 	
+		else 	{
 			Context.getInstance().getDaoRestaurant().findByType(type[choix-1]);
-
+			
+			int nb = saisieInt("Choisir l'id du resto :");
+			System.out.println("0-exit "); 
+		
+			if (nb==0)
+				 menuResto();			 
+			 else
+				 creeUnPanier(nb);
+		       }
+		}
+	
+	public static void creeUnPanier(int id) {
+    String ch;
+	System.out.println("0-exit ");
+	Context.getInstance().getDaoRestaurant().findCarteByRestaurantId(id);
+	List <Article> a=new ArrayList();
+	do 
+	{ 
+	int nb = saisieInt("Choisir l'id de l'article :");
+	
+	if (nb==0) {
+		 menuResto();	
+		}
+	else {
+	    Article article;
+		article=Context.getInstance().getDaoArticle().findById(nb);
+		a.add(article);
+		ch = saisieString("Voulez vous ajouter un autre article ? (y/n)");
 	}
-
+	}
+	while (ch.equals("y"));
+	ch=saisieString("vous les vous sauvegarder la commande y/n ");
+	if (ch.equals("y")){
+		Commande c = new Commande(a);
+		Context.getInstance().getDaoCommande().save(c);	
+		
+	}
+	else{
+		a=null;
+		menuResto();
+	}
+	
+	}
+	
+	public static void findByName() {}
+	
 
 
 
