@@ -100,7 +100,7 @@ public class DAOAdmin implements IDAOAdmin{
 	public void supprimerCompte()
 	{
 		List<Utilisateur> user= new ArrayList();
-		user= Context.getInstance().getDAOutilisateur().findAll();
+		user= Context.getInstance().getDaoUtilisateur().findAll();
 		String choix=saisieString("nom du compte à supprimer:");
 		for (Utilisateur u :user)
 		{
@@ -108,7 +108,7 @@ public class DAOAdmin implements IDAOAdmin{
 			{
 				if (saisieString("Voulez vous vraiment supprimer "+u +" (oui/non)").equalsIgnoreCase("oui"))
 				{
-					Context.getInstance().getDAOutilisateur().delete( u);
+					Context.getInstance().getDaoUtilisateur().delete( u);
 				}
 			}
 		}
