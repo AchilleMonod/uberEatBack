@@ -39,6 +39,17 @@ public class DAORestaurant implements IDAORestaurant{
 		return restaurant;
 		
 	}
+	
+	public List<Restaurant> findByName(String Name){
+		
+		EntityManager em = Context.getInstance().getEmf().createEntityManager();
+		Query requete = em.createQuery("from Restaurant r where r.name like %Name%",Restaurant.class);
+		requete.setParameter("name", Name);
+		List<Restaurant> restaurant = requete.getResultList();
+		em.close();
+		return restaurant;
+		
+	}
 
 
 	@Override
