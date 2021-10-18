@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 @Entity
 public class Restaurateur extends Utilisateur  {
 
-	
+	private Restaurant restaurant;
 	
 	public Restaurateur() {
 		super();
@@ -21,5 +21,14 @@ public class Restaurateur extends Utilisateur  {
 		return "Restaurateur [nom=" + nom + ", prenom=" + prenom + ", id=" + id + ", mdp=" + mdp + "]";
 	}
 
-	
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
+
 }

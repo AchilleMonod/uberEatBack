@@ -49,4 +49,14 @@ public class DAOArticle implements IDAOArticle{
 		em.close();
 	}
 
+	@Override
+	public List<Article> findByRestaurantId(int idResto) {
+		EntityManager em = Context.getInstance().getEmf().createEntityManager();
+		Query requete = em.createQuery("from Article a where a.restaurant=:restaurant",Article.class);
+		requete.setParameter("restaurant",Context.getInstance().getDaoRestaurant().findById(idResto));
+		List<Article> carte = requete.getResultList();
+		em.close();
+		return carte;
+	}
+
 }

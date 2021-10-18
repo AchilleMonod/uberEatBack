@@ -124,6 +124,51 @@ public class DAORestaurateur implements IDAORestaurateur{
 		nouveauRestaurant.add(resto);	
 		
 	}
+	
+	
 
+	@Override
+	public void modifCarte(Restaurant resto) {
+		List<Article> carte=Context.getInstance().getDaoArticle().findByRestaurantId(resto.getId());
+		Article art=null;
+		System.out.println("Carte actuelle :");
+		int cpt=0;
+		for(Article a: carte) 
+		{
+			System.out.println((cpt+1)+" : "+a);
+			cpt++;
+		}
+		int choix=saisieInt("Modifier un article(1), supprimer un article(2) ou ajouter un article (3)");
+		if(choix==1) 
+		{
+			int articleAModifier=saisieInt("Numero de l'article à modifier");
+			double newPrix=saisieDouble("Nouveaux Prix");
+			String newLibelle=saisieString("Nouveau libelle");
+			String newDescription=saisieString("Nouvelle description");
+			carte.get(articleAModifier-1).setLibelle(newLibelle);
+			carte.get(articleAModifier-1).setPrix(newPrix);
+			carte.get(articleAModifier-1).setDescritption(newDescription);
+			Context.getInstance().getDaoArticle().save(carte.get(articleAModifier-1));
+		}
+		if(choix==2) 
+		{
+			int articleAModifier=saisieInt("Numero de l'article à supprimer");
+			Context.getInstance().getDaoArticle().delete(carte.get(articleAModifier-1));
+			carte.remove(articleAModifier-1);
+
+		}
+		if(choix==3) 
+		{
+			System.out.println("Données de l'article à ajouter");
+			double prix=saisieDouble("Prix");
+			String libelle=saisieString("Libelle");
+			String description=saisieString("Description");
+			art=new Article(prix,libelle,description,resto);
+			Context.getInstance().getDaoArticle().save(art);
+		}
+		
+	}
+
+	
 	
 }
