@@ -2,8 +2,6 @@ package dao;
 
 import java.util.List;
 
-import model.Utilisateur;
-
 public interface IDAO<T,K> {
 	
 	public T findById(K id);
