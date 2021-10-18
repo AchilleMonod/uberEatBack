@@ -10,6 +10,7 @@ import javax.persistence.Query;
 
 import dao.IDAOAdmin;
 import model.Admin;
+import model.Client;
 import model.Restaurant;
 import model.Restaurateur;
 import model.Utilisateur;
@@ -83,6 +84,7 @@ public class DAOAdmin implements IDAOAdmin{
 	{
 		List<Restaurant> restaurant= new ArrayList();
 		restaurant= Context.getInstance().getDaoRestaurant().findAll();
+		System.out.println(restaurant);
 		String choix=saisieString("nom du restaurant à supprimer:");
 		for (Restaurant r :restaurant)
 		{
@@ -114,4 +116,16 @@ public class DAOAdmin implements IDAOAdmin{
 		}
 	}
 
+	
+
+	public void creerUnAdmin() {
+		String nom = saisieString("Entrez votre nom");
+		String prenom = saisieString("Entrez votre prenom");
+		String email = saisieString("Entrez votre email");
+		String mdp = saisieString("Entrez votre mdp");
+		Admin newUser = new Admin(nom,prenom,email,mdp); 
+		Context.getInstance().getDaoAdmin().save(newUser);
+
+		
+	}
 }

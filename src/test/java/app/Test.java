@@ -64,15 +64,15 @@ public class Test {
 
 		connected = Context.getInstance().getDaoUtilisateur().connect(login, password);
 
-		if(user instanceof Client) 
+		if(connected  instanceof Client) 
 		{
 			menuClient();
 		}
-		else if(user instanceof Restaurateur) 
+		else if(connected  instanceof Restaurateur) 
 		{
 			menuRestaurateur();
 		}
-		else if(user instanceof Admin) 
+		else if(connected  instanceof Admin) 
 		{
 			menuAdmin();
 		}
@@ -92,8 +92,8 @@ public class Test {
 		int choix = saisieInt("Choisir un menu :");
 		switch(choix) 
 		{
-		case 1 : inscritpionClient();break;
-		case 2 : inscritpionRestaurateur();break;
+		case 1 : Context.getInstance().getDaoUtilisateur().creerUncompte(choix);break;
+		case 2 : Context.getInstance().getDaoUtilisateur().creerUncompte(choix);break;
 		case 3 : menuPrincipal();break;
 
 		}
@@ -113,10 +113,10 @@ public class Test {
 		int choix = saisieInt("Choisir un menu :");
 		switch(choix) 
 		{
-		case 1 : showListResto();break;
-		case 2 : createAdmin();break;
-		case 3 : deleteResto();break;
-		case 4 : deleteAdmin();break;
+		case 1 : Context.getInstance().getDaoAdmin().validerUnRestau (nouveauRestaurant);break;
+		case 2 : Context.getInstance().getDaoAdmin().creerUnAdmin();break;
+		case 3 : Context.getInstance().getDaoAdmin().supprimerRestau();break;
+		case 4 : Context.getInstance().getDaoAdmin().supprimerCompte();break;
 		case 5 : menuPrincipal();break;
 		}
 		menuAdmin();
@@ -137,7 +137,7 @@ public class Test {
 		{
 		case 1 : menuResto();break;
 		case 2 : consulterHistorique();break;
-		case 3 : modifInfosClient();break;
+		case 3 : Context.getInstance().getDaoUtilisateur().modifInfo(connected);break;
 		case 4 : menuPrincipal();break;
 
 		}
@@ -157,9 +157,9 @@ public class Test {
 		int choix = saisieInt("Choisir un menu :");
 		switch(choix) 
 		{
-		case 1 : addResto();break;
+		case 1 : Context.getInstance().getDaoRestaurateur().addResto(nouveauRestaurant);break;
 		case 2 : modifInfosResto();break;
-		case 3 : modifInfosRestaurateur();break;
+		case 3 : Context.getInstance().getDaoUtilisateur().modifInfo(connected);break;
 		case 4 : menuConnexion();break;
 
 		}
