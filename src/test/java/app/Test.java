@@ -1,14 +1,17 @@
 package app;
 
+import java.util.LinkedList;
+
 import model.Admin;
 import model.Client;
+import model.Restaurant;
 import model.Restaurateur;
 import model.Utilisateur;
 import util.Context;
 
 public class Test {
 
-	
+	static LinkedList<Restaurant> nouveauRestaurant = new LinkedList<Restaurant>();
 //	public static String saisieString(String msg) 
 //	{
 //		Scanner sc= new Scanner(System.in);		
