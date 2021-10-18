@@ -20,15 +20,17 @@ public class Restaurant {
 	@Enumerated(EnumType.STRING)
 	private TypeResto typeresto;
 	
+	private String name;
 	
 	public Restaurant() {
 		super();
 	}
 
-	public Restaurant(List<Article> carte, TypeResto typeresto) {
+	public Restaurant(List<Article> carte, TypeResto typeresto,String name) {
 		super();
 		this.carte = carte;
 		this.typeresto = typeresto;
+		this.name =name;
 	}
 	
 	public int getId() {
@@ -41,6 +43,15 @@ public class Restaurant {
 
 	public List<Article> getCarte() {
 		return carte;
+	}
+
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setCarte(List<Article> carte) {
@@ -67,8 +78,10 @@ public class Restaurant {
 
 	@Override
 	public String toString() {
-		return "Restaurant [carte=" + carte + ", typeresto=" + typeresto + "]";
+		return "Restaurant [carte=" + carte + ", typeresto=" + typeresto + ", name=" + name + "]";
 	}
+
+	
 	
 	
 }
