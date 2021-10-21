@@ -13,8 +13,8 @@
 #bouton{
   border-radius: 15%;
   height : 50px;
-  border:solid lightgrey;
-  background-color: green;
+  /*border:solid lightgrey;*/
+  background-color: #00800000;
 }
 
 #menu{
@@ -42,3 +42,13 @@
   border:solid lightgrey;
   background-color: green;
 }
+.dropdown-menu{
+  background-color: #00800000;
+}
+.dropdown-item{
+  color: white;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+ }

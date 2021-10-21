@@ -7,7 +7,7 @@
 <head>
 <title>accueil</title>
 <meta charset="utf-8">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style_acceuil.css">
 </head>
 <body>
   <div class="container-fluid">
@@ -15,7 +15,17 @@
       <div class="col-2"><span id="bouton">logo</span></div>
       <div class="col-3">
         <span id = "bouton">Se connecter</span>
-        <span id ="bouton">Menu déroulant</span>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="bouton" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu déroulant
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Se connecter</a></li>
+            <li><a class="dropdown-item" href="#">S'inscrire</a></li>
+            <li><a class="dropdown-item" href="#">Livreur</a></li>
+            <li><a class="dropdown-item" href="#">Restaurateur</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
