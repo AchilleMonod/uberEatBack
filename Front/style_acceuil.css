@@ -11,14 +11,18 @@
 }
 
 #bouton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15%;
   height : 50px;
-  /*border:solid lightgrey;*/
+  border:solid lightgrey;
   background-color: #00800000;
 }
 
-#menu{
-  border-bottom: solid lightgrey;
+#menuLeft{
+  display: flex;
+  justify-content: space-around;
 
 }
 
