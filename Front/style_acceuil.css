@@ -1,0 +1,44 @@
+
+
+/* Style the header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  height:500px;
+  color: white;
+  background-image: url("img/bouffe1.jpg");
+  background-size: 100%;
+}
+
+#bouton{
+  border-radius: 15%;
+  height : 50px;
+  border:solid lightgrey;
+  background-color: green;
+}
+
+#menu{
+  border-bottom: solid lightgrey;
+
+}
+
+/* Style the main */
+.main{
+  display: flex;
+  background-color: lightgrey;
+  background-size: 100%;
+  height:500px;
+  justify-content: center;
+  align-items: center;
+}
+
+#choix{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  border-radius: 15%;
+  height : 50px;
+  border:solid lightgrey;
+  background-color: green;
+}
