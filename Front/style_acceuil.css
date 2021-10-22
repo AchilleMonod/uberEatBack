@@ -28,7 +28,11 @@ border-bottom: solid white;
   background-color: #8e8b8a;
 }
 
-
+#bouton:hover{
+  border:solid #8e8b8a;
+  background-color:white;
+  color:  #8e8b8a;
+}
 
 #menu img{
   height:50px;
