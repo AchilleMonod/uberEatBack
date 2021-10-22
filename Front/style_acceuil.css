@@ -1,5 +1,6 @@
 
 
+
 /* Style the header */
 .header {
   display: flex;
@@ -11,19 +12,13 @@
   background-position: top;
 }
 
-#menu{
-height:100px;
-display: flex;
-align-items: center;
-border-bottom: solid white;
-}
-
 #bouton{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 15%;
+  border-radius: 5%;
   height : 50px;
+  width:70%;
   border:solid white;
   background-color: #8e8b8a;
 }
@@ -34,9 +29,21 @@ border-bottom: solid white;
   color:  #8e8b8a;
 }
 
-#menu img{
+.header img{
   height:50px;
+}
+#navbartop{
+  height :10%;
+  position:fixed;
+  top: 0;
+  right: 0;
+  align-items: center;
+  border-bottom: solid white 2px;
+}
 
+#elemnavbar{
+  display: flex;
+  justify-content: center;
 }
 
 /* Style the main */
@@ -44,7 +51,7 @@ border-bottom: solid white;
   display: flex;
   background-color: lightgrey;
   background-size: 100%;
-  height:500px;
+  height:700px;
   justify-content: center;
   align-items: center;
 }
@@ -56,8 +63,13 @@ border-bottom: solid white;
   flex-flow: column wrap;
   border-radius: 5%;
   height : 400px;
-  border:solid lightgrey;
   background-color: green;
+  box-shadow: 4px 4px 0px black;
+}
+
+#gauche{
+  background-image: url("img/bouffe2.jpg");
+  background-size: contain;
 }
 
 #droite{
@@ -72,6 +84,8 @@ border-bottom: solid white;
 
 .dropdown-menu{
   background-color: #8e8b8a;
+  border-radius: 5%;
+  width: 70%;
 }
 .dropdown-item{
   color: white;
