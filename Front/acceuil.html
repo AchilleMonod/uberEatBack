@@ -10,20 +10,41 @@
 <link rel="stylesheet" href="style_acceuil.css">
 </head>
 <body>
+<!--  <div class="container-fluid" id="containerHeader">
+    <div class="header row justify-content-between">
+      <div class="col-2"  id="menu"> <img src="img/logo.png" alt="logo"> </div>
+      <div class="col-6" id="menu"></div>
+      <div class="col-4 row"  id="menu">
+        <span class="col-6" id = "bouton">Se connecter</span>
+        <div class="dropdown col-6">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="bouton" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu déroulant
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Se connecter</a></li>
+            <li><a class="dropdown-item" href="#">S'inscrire</a></li>
+            <li><a class="dropdown-item" href="#">Livreur</a></li>
+            <li><a class="dropdown-item" href="#">Restaurateur</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   <div class="container-fluid">
     <div class="header row justify-content-between">
-      <ul class="nav nav-pills" id="navbartop">
+      <ul class="nav nav-pills navbartop transi back">
         <li class="nav-item col-2" id="elemnavbar">
           <a class="nav-link active" href="acceuil.html"><img src="img/logo.png" alt="logo"></a>
         </li>
-        <li class="nav-link disabled col-6" id="elemnavbar"></li>
+        <li class="nav-link disabled col-7" id="elemnavbar"></li>
         <li class="nav-item col-2">
-          <a class="nav-link" href="#" id="bouton">Se connecter</a>
+          <a class="nav-link bouton" href="#">Se connecter</a>
         </li>
-        <li class="dropdown col-2">
+        <li class="dropdown col-1">
           <!--<button class="btn btn-secondary dropdown-toggle" id="bouton" data-bs-toggle="dropdown" aria-expanded="false">
             Menu déroulant</button>-->
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="bouton" href="#">Menu déroulant</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"> <img src="img/menuDeroulantBlanc.png" alt=""></a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="#">Se connecter</a></li>
             <li><a class="dropdown-item" href="#">S'inscrire</a></li>
@@ -49,6 +70,12 @@
 
   <div class="footer">
   </div>
-
 </body>
+
+<script type="text/javascript">
+  var el = document.querySelector('.btn');
+  if (el.scrollTop!=0){
+    navbartop.style.backgroundColor="grey";
+  }
+</script>
 </html>
