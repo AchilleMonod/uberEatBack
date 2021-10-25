@@ -1,7 +1,6 @@
 
 
 
-
 /* Style the header */
 .header {
   display: flex;
@@ -13,7 +12,7 @@
   background-position: top;
 }
 
-.header .bouton{
+#bouton{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +23,7 @@
   background-color: #8e8b8a;
 }
 
-.bouton:hover{
+#bouton:hover{
   border:solid #8e8b8a;
   background-color:white;
   color:  #8e8b8a;
@@ -33,12 +32,13 @@
 .header img{
   height:50px;
 }
-.navbartop{
+#navbartop{
   height :10%;
   position:fixed;
   top: 0;
   right: 0;
   align-items: center;
+  border-bottom: solid white 2px;
 }
 
 #elemnavbar{
@@ -49,7 +49,7 @@
 /* Style the main */
 .main{
   display: flex;
-  background-color: #f4ebeb;
+  background-color: lightgrey;
   background-size: 100%;
   height:700px;
   justify-content: center;
@@ -69,22 +69,22 @@
 
 #gauche{
   background-image: url("img/Image_Restaurant.jfif");
-  background-size: contain;
+  background-size: cover;
 }
 
 #milieu{
   background-image: url("img/Commande.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
 #droiteHaut{
   background-image: url("img/livreur.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
 #droiteBas{
   background-image: url("img/Inscription.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
 .droite{
@@ -95,25 +95,6 @@
   width:100%;
   border:solid lightgrey;
   background-color: green;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
-  background-color:#0d6efd00;
-  color:white;
-}
-
-.navbartop .nav-link{
-  color:white;
-}
-
-.back{
-}
-.transi {
-    transition: background 200ms ease;
-    transition-property: background;
-    transition-duration: 200ms;
-    transition-timing-function: ease;
-    transition-delay: 0s;
 }
 
 .dropdown-menu{
