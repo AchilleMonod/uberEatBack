@@ -102,6 +102,26 @@
   background-color: green;
 }
 
+/* Style the footer */
+
+.footer{
+  display: flex;
+  background-color: black;
+  background-size: cover;
+  height:500px;
+  padding-top: 50px;
+  color:white;
+}
+
+.footer img{
+  height:50px;
+}
+
+#topFoot{
+  border-bottom: solid white 3px;
+  width:100%;
+}
+
 
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
