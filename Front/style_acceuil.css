@@ -1,6 +1,7 @@
 
 
 
+
 /* Style the header */
 .header {
   display: flex;
@@ -12,7 +13,7 @@
   background-position: top;
 }
 
-#bouton{
+.header .bouton{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,22 +24,23 @@
   background-color: #8e8b8a;
 }
 
-#bouton:hover{
+.header .bouton:hover{
   border:solid #8e8b8a;
   background-color:white;
-  color:  #8e8b8a;
+}
+.navbartop .nav-link:hover {
+    color: grey;
 }
 
 .header img{
   height:50px;
 }
-#navbartop{
+.navbartop{
   height :10%;
   position:fixed;
   top: 0;
   right: 0;
   align-items: center;
-  border-bottom: solid white 2px;
 }
 
 #elemnavbar{
@@ -49,7 +51,7 @@
 /* Style the main */
 .main{
   display: flex;
-  background-color: lightgrey;
+  background-color: #f4ebeb;
   background-size: 100%;
   height:700px;
   justify-content: center;
@@ -66,25 +68,28 @@
   background-color: green;
   box-shadow: 4px 4px 0px black;
 }
+.choix:hover{
+  height : 330px;
+}
 
 #gauche{
   background-image: url("img/Image_Restaurant.jfif");
-  background-size: cover;
+  background-size: contain;
 }
 
 #milieu{
   background-image: url("img/Commande.jpg");
-  background-size: cover;
+  background-size: contain;
 }
 
 #droiteHaut{
   background-image: url("img/livreur.jpg");
-  background-size: cover;
+  background-size: contain;
 }
 
 #droiteBas{
   background-image: url("img/Inscription.jpg");
-  background-size: cover;
+  background-size: contain;
 }
 
 .droite{
